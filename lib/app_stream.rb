@@ -22,11 +22,11 @@ client2 = Twitter::Streaming::Client.new do |config|
 end
 
 
-def like_stream(client, client2)
+def like_follow_stream(client, client2)
 client2.filter(track: "#bonjour_monde") { |object|
   client.favorite(object)
   client.follow(object.user.screen_name) if object.user.screen_name != " N_Titah"
 }
 end
 
-like_stream(client, client2)
+like__follow_stream(client, client2)
